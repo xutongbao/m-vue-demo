@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 路由(router)</title>
+<style type="text/css">
+  .active{color: red;}
+  .text-danger{color: #f66f0c; font-size: 40px;}
+</style>
+<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <div
+    class="static"
+    v-bind:class="{ active: isActive, 'text-danger': hasError }"
+  >xutongbao</div>
+  <div
+    class="static"
+    v-bind:class="classObject"
+  >xutongbao</div>  
+</div>
+ 
+<script>
+var watchExampleVM = new Vue({
+  el: '#app',
+  data: {
+    isActive: true,
+    hasError: true,
+    classObject: {
+      active: true,
+      'text-danger': false
+    }    
+  }
+})
+</script>
+</body>
+</html>
