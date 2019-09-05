@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <button-counter></button-counter>
+</div>
+ 
+<script>
+Vue.component('button-counter', {
+  template: `
+    <div>
+      <div>{{count}}</div>
+      <div>
+        <button @click="handleSub">减</button>
+        <button @click="handleAdd">加</button>
+      </div>
+    </div>`,
+  data() {
+    return {
+      count: 0
+    }
+  },
+  methods: {
+    handleAdd() {
+      this.count = this.count + 1
+    },
+    handleSub() {
+      this.count = this.count - 1
+    }
+  }
+})
+
+var watchExampleVM = new Vue({
+  el: '#app',
+  data: {
+    isActive: true,
+  }
+})
+</script>
+</body>
+</html>
